@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Presence</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <script src="sidebar.js"></script>
+</head>
+<body>
+    <div id="sidebar" class="bg-white shadow-lg rounded-xl overflow-hidden w-[280px] h-screen m-3 font-normal flex flex-col">
+        <div class="pt-10 w-full flex flex-col items-center justify-center">
+            <span class="font-poppins text-[20px] font-bold">Smart Presence</span>
+        </div>
+        <div class="mt-10 w-full flex-1">
+            <ul class="w-full">
+                <li class="mb-2 w-full">
+                    <button data-dropdown class="flex justify-between w-full py-3 hover:bg-[rgba(0,170,255,0.1)] rounded-lg px-8">
+                        <div class="flex gap-4 items-center">
+                            <i class="bi bi-house-door-fill text-goldenYellow text-lg"></i>
+                            <span class="text-gray-500">Dashboard</span>
+                        </div>
+                        <i class="bi bi-chevron-down text-dodgerBlue -rotate-90"></i>
+                    </button>
+                    <ul class="rounded-md w-full">
+                        <li>
+                            <a href="pages/overview.html" class="menu-item flex gap-4 items-center px-12 py-2 rounded-lg hover:bg-blue-100 transition group" data-page="pages/overview.html">
+                                <i class="bi bi-file-earmark-text text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                                <span class="text-gray-500">Overview</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/allReport.html" class="menu-item flex gap-4 items-center px-12 py-2 rounded-lg hover:bg-blue-100 transition group" data-page="pages/allReport.html">
+                                <i class="bi bi-bar-chart-steps text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                                <span class="text-gray-500">All Report</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/individualReport.html" class="menu-item flex gap-4 items-center px-12 py-2 rounded-lg hover:bg-blue-100 transition group" data-page="pages/individualReport.html">
+                                <i class="bi bi-person-lines-fill text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                                <span class="text-gray-500">Individual Report</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="mb-2 w-full">
+                    <button data-dropdown class=" flex justify-between w-full py-3 hover:bg-[rgba(0,170,255,0.1)] rounded-lg px-8">
+                        <div class="flex gap-4 items-center">
+                            <i class="bi bi-folder-symlink-fill text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                            <span class="text-gray-500">Management</span>
+                        </div>
+                        <i class="bi bi-chevron-down text-dodgerBlue -rotate-90"></i>
+                    </button>
+
+                    <ul class="rounded-md w-full">
+                        <li>
+                            <a href="pages/employeeData.html" class="menu-item flex gap-4 items-center px-12 py-2 rounded-lg hover:bg-blue-100 transition group" data-page="pages/employeeData.html">
+                                <i class="bi bi-people-fill text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                                <span class="text-gray-500 group-active:text-blue-600">Employee Data</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="pages/account.html" class="menu-item flex gap-4 items-center px-12 py-2 rounded-lg hover:bg-blue-100 transition group" data-page="pages/account.html">
+                                <i class="bi bi-person-badge text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                                <span class="text-gray-500">Account</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mt-auto w-full">
+            <ul class="w-full">
+                <li class="mb-2 w-full">
+                    <a href="#" class="flex gap-4 items-center hover:bg-[rgba(0,170,255,0.1)] px-8 py-3 rounded-lg transition">
+                        <i class="bi bi-gear-fill text-goldenYellow text-lg group-hover:text-blue-500 transition"></i>
+                        <p class="text-gray-500">Settings</p>
+                    </a>
+                </li>
+                <li class="mb-2 w-full">
+                    <a href="#" class="flex gap-4 items-center hover:bg-[rgba(255,0,0,0.1)] px-8 py-3 rounded-lg">
+                        <i class="bi bi-box-arrow-right text-red-500 text-lg"></i>
+                        <p class="text-gray-500">Logout</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // const dropdownBtn = document.getElementById("dropdown-btn");
+        // const dropdownIcon = document.getElementById("dropdown-icon");
+        // const dropdownMenu = document.getElementById("dropdown-menu");
+
+        // dropdownBtn.addEventListener("click", () => {
+        //     dropdownMenu.classList.toggle("hidden");
+        //     dropdownIcon.classList.toggle("-rotate-90");
+        // });
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const dropdownButtons = document.querySelectorAll("[data-dropdown]");
+
+        //     dropdownButtons.forEach(button => {
+        //         button.addEventListener("click", function () {
+        //             const menu = this.nextElementSibling;
+        //             const icon = this.querySelector("i.bi-chevron-down");
+        //             const text = this.querySelector("span");
+
+        //             menu.classList.toggle("hidden");
+        //             icon.classList.toggle("-rotate-90");
+
+        //             if (!menu.classList.contains("hidden")) {
+        //                 text.classList.add("text-black", "font-semibold");
+        //             } else {
+        //                 text.classList.remove("text-black", "font-semibold");
+        //             }
+        //         });
+        //     });
+        // });
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     const currentPath = window.location.pathname.split("/").pop();
+        //     const menuItems = document.querySelectorAll(".menu-item");
+
+        //     menuItems.forEach(item => {
+        //         if (item.getAttribute("href") === currentPath) {
+        //             item.classList.remove("text-gray-500");
+        //             item.classList.add(
+        //                 "bg-skyBlue", 
+        //                 "bg-opacity-10", 
+        //                 "pointer-events-none", 
+        //                 "border-l-4",
+        //                 "border-blue-800",
+        //                 // "rounded-none"
+        //             );
+
+        //             const icon = item.querySelector("i"); 
+        //             if (icon) {
+        //                 icon.classList.remove("text-goldenYellow"); 
+        //                 icon.classList.add("text-blue-600");
+        //             }
+
+        //             const span = item.querySelector("span");
+        //             if (span) {
+        //                 span.classList.remove("text-gray-500");
+        //                 span.classList.add("text-blue-600", "font-semibold");
+        //             }
+        //         }
+        //     });
+        // });
+
+    </script>
+</body>
+</html>

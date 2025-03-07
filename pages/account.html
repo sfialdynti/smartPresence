@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Account</title>
+</head>
+<body class="flex">
+
+    <main class="ml-1">
+        <div class="text-white">
+            <div class="flex gap-2">
+                <i class="bi bi-folder-symlink-fill text-lg"></i>
+                <span class="pt-[2px]">Management</span>
+                <p>/</p>
+            </div>
+            <span class="pl-7 font-bold">Account</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg mt-16">
+            <div class="flex justify-between items-center mb-4 mt-6">
+                <div class="flex gap-3">
+                    <div class="relative">
+                        <button class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
+                            Divisi / Unit
+                            <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
+                        </button>
+                        <div class="absolute hidden bg-white shadow-md rounded-md mt-2 w-40">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">IOT</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Software</a>
+                        </div>
+                    </div>
+
+                    <div class="relative">
+                        <button class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
+                            Previllage
+                            <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
+                        </button>
+                        <div class="absolute hidden bg-white shadow-md rounded-md mt-2 w-40">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">IOT</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Software</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="border border-black border-opacity-60 px-4 py-2 rounded-2xl shadow-md">
+                        <span class="absolute right-3 top-2 text-gray-500">
+                            <i class="bi bi-search"></i>
+                        </span>
+                    </div>
+                    <button class="bg-brightGold text-white text-sm font-bold px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                        <i class="bi bi-plus text-lg"></i>
+                        Add Account
+                    </button>
+                </div>
+            </div>
+
+            <div class="overflow-x-auto my-12 shadow-md rounded-md border border-black border-opacity-30">
+                <table class="w-full border-collapse overflow-hidden border-black border-opacity-30">
+                    <thead class="bg-dodgerBlue bg-opacity-10 text-dodgerBlue">
+                        <tr>
+                            <th class="px-4 py-2 text-center">Username</th>
+                            <th class="px-4 py-2 text-center">User ID</th>
+                            <th class="px-4 py-2 text-center">Divisi</th><th class="px-4 py-2 text-center">Previllage</th><th class="px-4 py-2 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-4 py-2 text-center">Angel123</td>
+                            <td class="px-4 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">Admin</td>
+                            <td class="px-4 py-2 text-center">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-xl text-sm">Edit
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-xl text-sm">Delete    
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-4 py-2 text-center">Angel123</td>
+                            <td class="px-4 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">Admin</td>
+                            <td class="px-4 py-2 text-center">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-xl text-sm">Edit
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-xl text-sm">Delete
+                                    <i class="bi bi-trash-fill"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-between items-center mt-4 gap-4">
+                <div class="flex gap-2 ml-auto">
+                    <button class="bg-goldenYellow text-white px-2 py-1 rounded-full">
+                        <i class="bi bi-chevron-double-left"></i>
+                    </button>
+                    <span class="text-black">1</span>
+                    <button class="bg-goldenYellow text-white px-2 py-1 rounded-full">
+                        <i class="bi bi-chevron-double-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const prevBtn = document.querySelector(".bi-chevron-double-left").closest("button");
+            const nextBtn = document.querySelector(".bi-chevron-double-right").closest("button");
+            const numberSpan = prevBtn.nextElementSibling;
+
+            let currentPage = parseInt(numberSpan.textContent) || 1;
+            let maxPage = 1;
+
+            function setMaxPage(totalData){
+                maxPage = Math.ceil(totalData / 5);
+                if (currentPage > maxPage) {
+                    currentPage = maxPage;
+                    numberSpan.textContent = currentPage;
+                }
+            }
+
+            function  updatePage(newPage) {
+                if (newPage >= 1 && newPage <= maxPage) {
+                        currentPage = newPage;
+                        numberSpan.textContent = currentPage;
+                        loadTableData();
+                    }
+                }
+
+                prevBtn.addEventListener("click", function () {
+                    updatePage(currentPage - 1);
+                });
+
+                nextBtn.addEventListener("click", function () {
+                    updatePage(currentPage + 1);
+                });
+
+                setTimeout(() => {
+                    let totalData = 23; 
+                    setMaxPage(totalData);
+                }, 1000);
+
+                function loadTableData() {
+                    console.log(`Menampilkan halaman ${currentPage}`);
+                
+                }
+        });
+    </script> -->
+
+    
+</body>
+</html>
