@@ -22,13 +22,17 @@
             <div class="flex justify-between items-center mb-4 mt-6">
                 <div class="flex gap-3">
                     <div class="relative">
-                        <button class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
+                        <button id="menu-button" class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
                             Divisi / Unit
                             <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
                         </button>
-                        <div class="absolute hidden bg-white shadow-md rounded-md mt-2 w-40">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">IOT</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Software</a>
+                    
+                        <div id="menu-dropdown" class="absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Account settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Support</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">License</a>
+                            </div>
                         </div>
                     </div>
 
@@ -58,7 +62,7 @@
                 </div>
             </div>
 
-            <div class="overflow-x-auto my-12 shadow-md rounded-md border border-black border-opacity-30">
+            <div class="overflow-x-auto my-12 shadow-sm rounded-md border border-black border-opacity-30">
                 <table class="w-full border-collapse overflow-hidden border-black border-opacity-30">
                     <thead class="bg-dodgerBlue bg-opacity-10 text-dodgerBlue">
                         <tr>
@@ -114,50 +118,25 @@
         </div>
     </main>
 
-    <!-- <script>
+
+    <script defer>
         document.addEventListener("DOMContentLoaded", function () {
-            const prevBtn = document.querySelector(".bi-chevron-double-left").closest("button");
-            const nextBtn = document.querySelector(".bi-chevron-double-right").closest("button");
-            const numberSpan = prevBtn.nextElementSibling;
-
-            let currentPage = parseInt(numberSpan.textContent) || 1;
-            let maxPage = 1;
-
-            function setMaxPage(totalData){
-                maxPage = Math.ceil(totalData / 5);
-                if (currentPage > maxPage) {
-                    currentPage = maxPage;
-                    numberSpan.textContent = currentPage;
+            const menuButton = document.getElementById("menu-button");
+            const menuDropdown = document.getElementById("menu-dropdown");
+        
+            menuButton.addEventListener("click", function () {
+                menuDropdown.classList.toggle("hidden");
+            });
+        
+            // Tutup dropdown jika klik di luar
+            document.addEventListener("click", function (event) {
+                if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                    menuDropdown.classList.add("hidden");
                 }
-            }
-
-            function  updatePage(newPage) {
-                if (newPage >= 1 && newPage <= maxPage) {
-                        currentPage = newPage;
-                        numberSpan.textContent = currentPage;
-                        loadTableData();
-                    }
-                }
-
-                prevBtn.addEventListener("click", function () {
-                    updatePage(currentPage - 1);
-                });
-
-                nextBtn.addEventListener("click", function () {
-                    updatePage(currentPage + 1);
-                });
-
-                setTimeout(() => {
-                    let totalData = 23; 
-                    setMaxPage(totalData);
-                }, 1000);
-
-                function loadTableData() {
-                    console.log(`Menampilkan halaman ${currentPage}`);
-                
-                }
+            });
         });
-    </script> -->
+        </script>
+        
 
     
 </body>

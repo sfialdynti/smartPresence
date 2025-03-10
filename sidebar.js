@@ -50,15 +50,15 @@
 //     });
 // });
 
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("sidebar.html")
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById("sidebar").innerHTML = data;
-            setTimeout(initSidebar, 100);
-        })
-        .catch(error => console.error("Error:", error));
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//     fetch("sidebar.html")
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById("sidebar").innerHTML = data;
+//             setTimeout(initSidebar, 100);
+//         })
+//         .catch(error => console.error("Error:", error));
+// });
 
 function initSidebar() {
     console.log("Sidebar initialized!");
@@ -83,18 +83,70 @@ function initSidebar() {
     });
 }
 
+// document.addEventListener("DOMContentLoaded", function () {
+//     fetch("sidebar.html")
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById("sidebar-container").innerHTML = data;
+//             setupMenuLinks();
+//         })
+//         .catch(error => console.error("Error loading sidebar:", error));
+
+
+//     function setupMenuLinks() {
+//         const menuItems = document.querySelectorAll(".menu-item");
+
+//         menuItems.forEach(item => {
+//             item.addEventListener("click", function (event) {
+//                 event.preventDefault();
+//                 const page = this.getAttribute("data-page");
+
+//                 fetch(page)
+//                     .then(response => response.text())
+//                     .then(data => {
+//                         document.getElementById("main-content").innerHTML = data;
+//                         updateActiveMenu(this); 
+//                     })
+//                     .catch(error => console.error("Error loading page:", error));
+//             });
+//         });
+//     }
+
+//     function updateActiveMenu(activeItem) {
+//         document.querySelectorAll(".menu-item").forEach(item => {
+//             item.classList.remove("active");
+//         });
+
+//         activeItem.classList.add("active");
+//     }
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
+    fetchSidebar();
+});
+
+function fetchSidebar() {
     fetch("sidebar.html")
         .then(response => response.text())
         .then(data => {
-            document.getElementById("sidebar-container").innerHTML = data;
+            let sidebarContainer = document.getElementById("sidebar-container");
+            if (!sidebarContainer) {
+                console.error("Error: #sidebar-container not found!");
+                return;
+            }
+            sidebarContainer.innerHTML = data;
             setupMenuLinks();
         })
         .catch(error => console.error("Error loading sidebar:", error));
+}
 
-
-    function setupMenuLinks() {
+function setupMenuLinks() {
+    setTimeout(() => {
         const menuItems = document.querySelectorAll(".menu-item");
+        if (menuItems.length === 0) {
+            console.warn("Warning: No menu items found.");
+            return;
+        }
 
         menuItems.forEach(item => {
             item.addEventListener("click", function (event) {
@@ -104,19 +156,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 fetch(page)
                     .then(response => response.text())
                     .then(data => {
-                        document.getElementById("main-content").innerHTML = data;
-                        updateActiveMenu(this); 
+                        let mainContent = document.getElementById("main-content");
+                        if (!mainContent) {
+                            console.error("Error: #main-content not found!");
+                            return;
+                        }
+                        mainContent.innerHTML = data;
+                        updateActiveMenu(this);
                     })
                     .catch(error => console.error("Error loading page:", error));
             });
         });
-    }
+    }, 100);
+}
 
-    function updateActiveMenu(activeItem) {
-        document.querySelectorAll(".menu-item").forEach(item => {
-            item.classList.remove("active");
-        });
-
-        activeItem.classList.add("active");
-    }
-});
+function updateActiveMenu(activeItem) {
+    document.querySelectorAll(".menu-item").forEach(item => {
+        item.classList.remove("active");
+    });
+    activeItem.classList.add("active");
+}
