@@ -3,18 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Individual Report</title>
 </head>
 <body>
     <main class="ml-1">
         <div class="text-white">
             <div class="flex gap-2">
                 <i class="bi bi-house-door text-lg"></i>
-                <span class="pt-[2px]">Management</span>
+                <span class="pt-[2px]">Dashboard</span>
                 <p>/</p>
             </div>
             <span class="pl-7 font-bold">Individual Report</span>
         </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-lg mt-16">
+            <div class="flex justify-between items-center mb-4 mt-6">
+                <div class="flex gap-3">
+                    <!-- Dropdown Status -->
+                    <div class="relative">
+                        <button class="menu-button bg-dodgerBlue text-white px-7 py-2 rounded-xl shadow-md flex items-center gap-3 text-xs font-bold">
+                            Status
+                            <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
+                        </button>
+                    
+                        <div class="menu-dropdown absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">On Time</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Late</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">On Leave</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Absent</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Divisi / Unit -->
+                    <div class="relative">
+                        <button class="menu-button bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-xs font-bold">
+                            Divisi / Unit
+                            <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
+                        </button>
+                    
+                        <div class="menu-dropdown absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dropdown Office -->
+                    <div class="relative">
+                        <button class="menu-button bg-dodgerBlue text-white px-6 py-2 rounded-xl shadow-md flex items-center gap-3 text-xs font-bold">
+                            Office
+                            <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
+                        </button>
+                    
+                        <div class="menu-dropdown absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">DBT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">DBT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">DBT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="flex ">
+                    <div class="relative">
+                        <input type="text" placeholder="Search" class="border border-black border-opacity-60 px-4 py-2 rounded-2xl shadow-md text-xs w-48">
+                        <span class="absolute right-3 top-1 text-gray-500">
+                            <i class="bi bi-search text-xs"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabel  -->
+            <div class="overflow-x-auto my-12 shadow-sm rounded-md border border-black border-opacity-30 text-xs">
+                <table class="w-full border-collapse overflow-hidden border-black border-opacity-30">
+                    <!-- Header -->
+                    <thead class="bg-dodgerBlue bg-opacity-10 text-dodgerBlue">
+                        <tr>
+                            <th class="px-4 py-2 text-center">Name</th>
+                            <th class="px-24 py-2 text-center">Divisi / Unit</th>
+                            <th class="px-4 py-2 text-center">Status</th>
+                            <th class="px-34 py-2 text-center">Check In Time</th>
+                            <th class="px-4 py-2 text-center">Office</th>
+                            <th class="px-4 py-2 text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <!-- Body -->
+                    <tbody>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-24 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">On Time</td>
+                            <td class="px-34 py-2 text-center">08.00</td>
+                            <td class="px-4 py-2 text-center">DBT</td>
+                            <td class="px-4 py-2 text-center gap-2">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full">
+                                    View Report
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-full">
+                                    Download
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-24 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">On Time</td>
+                            <td class="px-34 py-2 text-center">08.00</td>
+                            <td class="px-4 py-2 text-center">DBT</td>
+                            <td class="px-4 py-2 text-center gap-2">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full ">
+                                    View Report
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-full ">
+                                    Download
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-24 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">On Time</td>
+                            <td class="px-34 py-2 text-center">08.00</td>
+                            <td class="px-4 py-2 text-center">DBT</td>
+                            <td class="px-4 py-2 text-center gap-2">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full">
+                                    View Report
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-full">
+                                    Download
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="border-t">
+                            <td class="px-4 py-2 text-center">Mrs Angel</td>
+                            <td class="px-24 py-2 text-center">IOT</td>
+                            <td class="px-4 py-2 text-center">On Time</td>
+                            <td class="px-34 py-2 text-center">08.00</td>
+                            <td class="px-4 py-2 text-center">DBT</td>
+                            <td class="px-4 py-2 text-center gap-2">
+                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full">
+                                    View Report
+                                </button>
+                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-full">
+                                    Download
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Pagination -->
+            <div class="flex justify-between items-center mt-4 gap-4">
+                <div class="flex gap-2 ml-auto">
+                    <button class="bg-goldenYellow text-white px-2 py-1 rounded-full">
+                        <i class="bi bi-chevron-double-left"></i>
+                    </button>
+                    <span class="text-black">1</span>
+                    <button class="bg-goldenYellow text-white px-2 py-1 rounded-full">
+                        <i class="bi bi-chevron-double-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".menu-button");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", function () {
+                const dropdown = this.nextElementSibling;
+                
+                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                    if (menu !== dropdown) {
+                        menu.classList.add("hidden");
+                    }
+                });
+
+                dropdown.classList.toggle("hidden");
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".relative")) {
+                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                    menu.classList.add("hidden");
+                });
+            }
+        });
+    });
+    </script>
 </body>
 </html>

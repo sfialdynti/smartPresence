@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Account</title>
 </head>
 <body class="flex">
@@ -21,54 +22,66 @@
         <div class="bg-white p-6 rounded-lg shadow-lg mt-16">
             <div class="flex justify-between items-center mb-4 mt-6">
                 <div class="flex gap-3">
+                    <!-- Dropdown Divisi / Unit -->
                     <div class="relative">
-                        <button id="menu-button" class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
+                        <button class="menu-button bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-xs font-bold">
                             Divisi / Unit
                             <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
                         </button>
                     
-                        <div id="menu-dropdown" class="absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                        <div class="menu-dropdown absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
                             <div class="py-1">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Account settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Support</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">License</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">IOT</a>
                             </div>
                         </div>
                     </div>
 
+                    <!-- Dropdown Previllage -->
                     <div class="relative">
-                        <button class="bg-dodgerBlue text-white px-8 py-2 rounded-xl shadow-md flex items-center gap-3 text-sm font-bold">
+                        <button class="menu-button bg-dodgerBlue text-white px-6 py-2 rounded-xl shadow-md flex items-center gap-3 text-xs font-bold">
                             Previllage
                             <i class="bi bi-chevron-down text-dodgerBlue bg-white px-[2px] rounded-md"></i>
                         </button>
-                        <div class="absolute hidden bg-white shadow-md rounded-md mt-2 w-40">
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">IOT</a>
-                            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Software</a>
+                    
+                        <div class="menu-dropdown absolute right-0 z-10 mt-2 w-44 origin-top-right rounded-md bg-white ring-1 shadow-lg ring-black/5 hidden">
+                            <div class="py-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Admin</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Admin</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-slate-200 hover:text-black">Admin</a>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-3">
+                    <!-- Search Bar -->
                     <div class="relative">
-                        <input type="text" placeholder="Search" class="border border-black border-opacity-60 px-4 py-2 rounded-2xl shadow-md">
-                        <span class="absolute right-3 top-2 text-gray-500">
-                            <i class="bi bi-search"></i>
+                        <input type="text" placeholder="Search" class="border border-black border-opacity-60 px-4 py-2 rounded-2xl shadow-md text-xs">
+                        <span class="absolute right-3 top-1 text-gray-500">
+                            <i class="bi bi-search text-xs"></i>
                         </span>
                     </div>
-                    <button class="bg-brightGold text-white text-sm font-bold px-4 py-2 rounded-xl shadow-md flex items-center gap-2">
+                    
+                    <!-- Button Add -->
+                    <button class="bg-brightGold text-white text-xs font-bold px-4 py-1 rounded-xl shadow-md flex items-center gap-2">
                         <i class="bi bi-plus text-lg"></i>
                         Add Account
                     </button>
                 </div>
             </div>
 
-            <div class="overflow-x-auto my-12 shadow-sm rounded-md border border-black border-opacity-30">
+            <!-- Tabel -->
+            <div class="overflow-x-auto my-12 shadow-sm rounded-md border border-black border-opacity-30 text-xs">
                 <table class="w-full border-collapse overflow-hidden border-black border-opacity-30">
                     <thead class="bg-dodgerBlue bg-opacity-10 text-dodgerBlue">
                         <tr>
                             <th class="px-4 py-2 text-center">Username</th>
                             <th class="px-4 py-2 text-center">User ID</th>
-                            <th class="px-4 py-2 text-center">Divisi</th><th class="px-4 py-2 text-center">Previllage</th><th class="px-4 py-2 text-center">Action</th>
+                            <th class="px-4 py-2 text-center">Divisi</th>
+                            <th class="px-4 py-2 text-center">Previllage</th>
+                            <th class="px-4 py-2 text-center">Action</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -78,10 +91,10 @@
                             <td class="px-4 py-2 text-center">IOT</td>
                             <td class="px-4 py-2 text-center">Admin</td>
                             <td class="px-4 py-2 text-center">
-                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-xl text-sm">Edit
+                                <button class="bg-skyBlue text-white px-6 py-[4px] rounded-xl ">Edit
                                     <i class="bi bi-pencil-fill"></i>
                                 </button>
-                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-xl text-sm">Delete    
+                                <button class="bg-brightGold text-white px-6 py-[4px] rounded-xl ">Delete    
                                     <i class="bi bi-trash-fill"></i>
                                 </button>
                             </td>
@@ -92,10 +105,10 @@
                             <td class="px-4 py-2 text-center">IOT</td>
                             <td class="px-4 py-2 text-center">Admin</td>
                             <td class="px-4 py-2 text-center">
-                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-xl text-sm">Edit
+                                <button class="bg-skyBlue text-white px-6 py-[4px] rounded-xl ">Edit
                                     <i class="bi bi-pencil-fill"></i>
                                 </button>
-                                <button class="bg-brightGold text-white px-6 py-[6px] rounded-xl text-sm">Delete
+                                <button class="bg-brightGold text-white px-6 py-[4px] rounded-xl ">Delete
                                     <i class="bi bi-trash-fill"></i>
                                 </button>
                             </td>
@@ -104,6 +117,7 @@
                 </table>
             </div>
 
+            <!-- Pagination -->
             <div class="flex justify-between items-center mt-4 gap-4">
                 <div class="flex gap-2 ml-auto">
                     <button class="bg-goldenYellow text-white px-2 py-1 rounded-full">
@@ -120,22 +134,32 @@
 
 
     <script defer>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.getElementById("menu-button");
-            const menuDropdown = document.getElementById("menu-dropdown");
-        
-            menuButton.addEventListener("click", function () {
-                menuDropdown.classList.toggle("hidden");
-            });
-        
-            // Tutup dropdown jika klik di luar
-            document.addEventListener("click", function (event) {
-                if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
-                    menuDropdown.classList.add("hidden");
-                }
+         document.addEventListener("DOMContentLoaded", function () {
+        const buttons = document.querySelectorAll(".menu-button");
+
+        buttons.forEach((button) => {
+            button.addEventListener("click", function () {
+                const dropdown = this.nextElementSibling;
+                
+                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                    if (menu !== dropdown) {
+                        menu.classList.add("hidden");
+                    }
+                });
+
+                dropdown.classList.toggle("hidden");
             });
         });
-        </script>
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".relative")) {
+                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                    menu.classList.add("hidden");
+                });
+            }
+        });
+    });
+    </script>
         
 
     
