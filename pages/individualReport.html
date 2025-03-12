@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Individual Report</title>
 </head>
 <body>
@@ -118,9 +119,11 @@
                             <td class="px-34 py-2 text-center">08.00</td>
                             <td class="px-4 py-2 text-center">DBT</td>
                             <td class="px-4 py-2 text-center gap-2">
-                                <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full ">
-                                    View Report
-                                </button>
+                                <a href="viewReport.html">
+                                    <button class="bg-skyBlue text-white px-6 py-[6px] rounded-full ">
+                                        View Report
+                                    </button>
+                                </a>
                                 <button class="bg-brightGold text-white px-6 py-[6px] rounded-full ">
                                     Download
                                 </button>
@@ -172,6 +175,55 @@
                     </button>
                 </div>
             </div>
+        </div>
+
+        <div class="overflow-x-auto bg-white shadow-md rounded-lg mt-10 text-xs font-poppins">
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-black bg-opacity-[76] text-white">
+                        <th class="p-3 text-left">Date</th>
+                        <th class="p-3 text-left">Check in Time</th>
+                        <th class="p-3 text-left">Status Check In</th>
+                        <th class="p-3 text-left">Check Out Time</th>
+                        <th class="p-3 text-left">Status Check Out</th>
+                        <th class="p-3 text-left">Category</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b bg-gray-100">
+                        <td class="p-3">01/02/2025</td>
+                        <td class="p-3">08:00</td>
+                        <td class="p-3">On Time</td>
+                        <td class="p-3">17:00</td>
+                        <td class="p-3">On Time Check Out</td>
+                        <td class="p-3">Discipline</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-3">02/02/2025</td>
+                        <td class="p-3">08:00</td>
+                        <td class="p-3">On Time</td>
+                        <td class="p-3">17:00</td>
+                        <td class="p-3">On Time Check Out</td>
+                        <td class="p-3">Discipline</td>
+                    </tr>
+                    <tr class="border-b bg-gray-100">
+                        <td class="p-3">03/02/2025</td>
+                        <td class="p-3">09:00</td>
+                        <td class="p-3">Late</td>
+                        <td class="p-3">17:00</td>
+                        <td class="p-3">On Time Check Out</td>
+                        <td class="p-3">Undisciplined</td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-3">04/02/2025</td>
+                        <td class="p-3">09:00</td>
+                        <td class="p-3">Late</td>
+                        <td class="p-3">17:00</td>
+                        <td class="p-3">On Time Check Out</td>
+                        <td class="p-3">Undisciplined</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
 
