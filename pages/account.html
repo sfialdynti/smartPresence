@@ -65,10 +65,19 @@
                     </div>
                     
                     <!-- Button Add -->
-                    <button class="bg-brightGold text-white text-xs font-bold px-4 py-1 rounded-xl shadow-md flex items-center gap-2">
+                    <button id="open-modal-btn" class="bg-brightGold text-white text-xs font-bold px-4 py-1 rounded-xl shadow-md flex items-center gap-2">
                         <i class="bi bi-plus text-lg"></i>
                         Add Account
                     </button>
+                    <div id="modal-wrapper" class="fixed z-10 inset-0 hidden">
+                        <div class="flex items-center justify-center min-h-screen bg-gray-500 bg-opacity-75 transition-all">
+                            <!-- Modal Box -->
+                            <div class="bg-white p-10 rounded w-2/3 relative">
+                                <h3 class="text-3xl uppercase font-medium tracking-wider">Form</h3>
+                                <button id="close-modal-btn" class="absolute top-4 right-4 bg-red-500 text-white py-2 px-4 rounded">Close</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -134,32 +143,58 @@
 
 
     <script defer>
-         document.addEventListener("DOMContentLoaded", function () {
-        const buttons = document.querySelectorAll(".menu-button");
-
-        buttons.forEach((button) => {
-            button.addEventListener("click", function () {
-                const dropdown = this.nextElementSibling;
-                
-                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
-                    if (menu !== dropdown) {
-                        menu.classList.add("hidden");
-                    }
+        document.addEventListener("DOMContentLoaded", function () {
+            const buttons = document.querySelectorAll(".menu-button");
+            const openModalBtn = document.getElementById("open-modal-btn");
+            const closeModalBtn = document.getElementById("close-modal-btn");
+            const modalWrapper = document.getElementById("modal-wrapper");
+        
+            // Event listener untuk dropdown
+            buttons.forEach((button) => {
+                button.addEventListener("click", function (event) {
+                    event.stopPropagation(); // Mencegah event bubbling
+        
+                    const dropdown = this.nextElementSibling;
+        
+                    // Tutup dropdown lain sebelum membuka yang baru
+                    document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                        if (menu !== dropdown) {
+                            menu.classList.add("hidden");
+                        }
+                    });
+        
+                    dropdown.classList.toggle("hidden");
                 });
-
-                dropdown.classList.toggle("hidden");
+            });
+        
+            // Event listener untuk menutup dropdown saat klik di luar
+            document.addEventListener("click", function (event) {
+                if (!event.target.closest(".relative")) {
+                    document.querySelectorAll(".menu-dropdown").forEach((menu) => {
+                        menu.classList.add("hidden");
+                    });
+                }
+            });
+        
+            // Event listener untuk membuka modal
+            openModalBtn.addEventListener("click", () => {
+                modalWrapper.classList.remove("hidden");
+            });
+        
+            // Event listener untuk menutup modal
+            closeModalBtn.addEventListener("click", () => {
+                modalWrapper.classList.add("hidden");
+            });
+        
+            // Tutup modal saat klik di luar modal box
+            modalWrapper.addEventListener("click", (event) => {
+                if (event.target === modalWrapper) {
+                    modalWrapper.classList.add("hidden");
+                }
             });
         });
-
-        document.addEventListener("click", function (event) {
-            if (!event.target.closest(".relative")) {
-                document.querySelectorAll(".menu-dropdown").forEach((menu) => {
-                    menu.classList.add("hidden");
-                });
-            }
-        });
-    });
-    </script>
+        </script>
+        
         
 
     

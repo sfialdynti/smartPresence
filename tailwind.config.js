@@ -1,7 +1,7 @@
 // import "bootstrap-icons/font/bootstrap-icons.css";
 
 module.exports = {
-  content: ["./sidebar.html", "./pages/overview.html", "./index.html", "./pages/account.html", "./sidebar.js",  "./public/**/*.html", "./src/**/*.{html,js}"],
+  content: ["./sidebar.html", "./pages/overview.html", "./index.html", "./pages/account.html", "./sidebar.js", "./pages/login.html", "./public/**/*.html", "./src/**/*.{html,js}"],
   safelist: ["hidden"],
   theme: {
     extend: {
